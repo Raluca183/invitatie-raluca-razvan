@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Raluca & Răzvan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=
+
+<style>
+
+.divider{
+    width:120px;
+    height:2px;
+    background:#d4b483;
+    margin:50px auto;
+}
+
+body{
+    margin:0;
+    padding:0;
+    background:#f8f4ee;
+    color:#6b6258;
+    font-family:Arial,sans-serif;
+    text-align:center;
+}
+
+h1,h2,h3{
+    font-family:'Cormorant Garamond',serif;
+}
+
+.section{
+    padding:80px 20px;
+}
+
+h1{
+    font-size:70px;
+    margin-top:40px;
+}
+
+h2{
+    font-size:42px;
+}
+
+img{
+    max-width:90%;
+    border-radius:20px;
+}
+
+.button{
+    display:inline-block;
+    padding:14px 24px;
+    background:#d4b483;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    margin-top:15px;
+}
+
+.envelope{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.seal{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    background:radial-gradient(circle,
+    #e8c88d 0%,
+    #d4b483 45%,
+    #b89252 100%);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    font-size:34px;
+    font-family:'Cormorant Garamond',serif;
+    box-shadow:0 8px 25px rgba(0,0,0,0.25);
+    letter-spacing:2px;
+}
+
+.seal{
+    transition:all .3s ease;
+}
+
+.seal:hover{
+    transform:scale(1.08);
+}
+
+#content{
+    display:none;
+}
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.box{
+    background:white;
+    padding:15px;
+    border-radius:15px;
+    min-width:80px;
+}
+
+.hero-photo{
+    width:100%;
+    max-width:1000px;
+    height:auto;
+    object-fit:cover;
+    border-radius:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+input,
+select,
+textarea{
+    width:90%;
+    max-width:500px;
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-size:16px;
+    font-family:Arial,sans-serif;
+    background:white;
+}
+
+button{
+    background:#d4b483;
+    color:white;
+    border:none;
+    padding:14px 24px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#c6a36d;
+}
+
+</style>
+</head>
+<body>
+<div class="envelope" id="start">
+
+<div class="seal" onclick="openInvitation()">
+R&amp;R
+</div>
+
+
+<p>
+Există momente care merită trăite împreună...
+</p>
+
+<p style="margin-top:25px;font-size:14px;letter-spacing:4px;">
+APASĂ PENTRU A DESCHIDE
+</p>
+
+</div>
+
+
+<div id="content">
+<section class="section">
+
+<img
+src="raluca-razvan.jpg"
+class="hero-photo"
+alt="Raluca si Razvan">
+
+<h1>Raluca & Răzvan</h1>
+
+<h2>Ne căsătorim!</h2>
+
+<p>
+Împreună cu nașii noștri
+</p>
+
+<p>
+<b>Diana & Andrei Bob</b>
+</p>
+
+<p style="max-width:700px;margin:auto;line-height:1.8;">
+Cu inimile pline de emoție și recunoștință,
+vă invităm să ne fiți alături în ziua în care
+vom spune „Da” pentru totdeauna.
+</p>
+
+<h2>
+27 Februarie 2027
+</h2>
+
+</section>
+<section class="section">
+
+<h2>⏳ Countdown</h2>
+
+<div class="countdown">
+
+<div class="box">
+<div id="days">0</div>
+Zile
+</div>
+
+<div class="box">
+<div id="hours">0</div>
+Ore
+</div>
+
+<div class="box">
+<div id="minutes">0</div>
+Minute
+</div>
+
+<div class="box">
+<div id="seconds">0</div>
+Secunde
+</div>
+
+</div>
+
+</section>
+<section class="section">
+
+<h2>💒 Program</h2>
+
+<h3>⛪ Cununia religioasă</h3>
+
+<p>13:00</p>
+
+<p>Biserica Sfinții Împărați Constantin și Elena</p>
+
+<a class="button"
+href="https://maps.app.goo.gl/NJEBskUSeUnqidnQ6?g_st=iw"
+target="_blank">
+Navighează
+</a>
+
+<br><br>
+
+<h3>🥂 Recepția</h3>
+
+<p>17:00</p>
+
+<p>Belvedere Events</p>
+
+<a class="button"
+href="https://maps.app.goo.gl/qw9sH2564CuBQjB67?g_st=iw"
+target="_blank">
+Navighează
+</a>
+
+</section>
+<section class="section">
+
+<h2>❤️ Povestea noastră</h2>
+
+<img
+src="inel.jpg"
+alt="Inel"
+style="max-width:90%;border-radius:20px;">
+
+<p>
+Un singur „Da” pentru o viață întreagă.
+</p>
+
+</section>
+<section class="section">
+
+<h2>💌 Confirmare prezență</h2>
+
+<p style="max-width:600px;margin:auto;line-height:1.8;">
+Vă rugăm să ne confirmați prezența până la
+<b>15 ianuarie 2027</b>.
+</p>
+
+<br>
+
+
+<form onsubmit="sendMail(event)">
+
+<input id="nume"
+placeholder="Nume și prenume"
+required>
+
+<br><br>
+
+<select id="participare">
+
+<option>Veți participa?</option>
+
+<option>Da, vom participa cu drag 🤍</option>
+
+<option>Din păcate nu vom putea participa</option>
+
+</select>
+
+<br><br>
+
+<input
+id="adulti"
+placeholder="Număr adulți">
+
+<br><br>
+
+<input
+id="copii"
+placeholder="Număr copii">
+
+<br><br>
+
+<select id="cazare">
+
+<option>Aveți nevoie de cazare?</option>
+
+<option>Da</option>
+
+<option>Nu</option>
+
+</select>
+
+<br><br>
+
+<textarea
+id="mesaj"
+placeholder="Mesaj pentru miri">
+</textarea>
+
+<br><br>
+
+<button type="submit">
+Trimite confirmarea
+</button>
+
+<div style="margin-top:20px;font-size:14px;">
+Mulțumim pentru confirmare! 🤍
+<br>
+Vă așteptăm cu drag să sărbătorim împreună!
+
+<p style="font-style:italic;">
+27 Februarie 2027
+</p>
+</div>
+
+</form>
+
+</section>
+<section class="section">
+
+<h1>
+Raluca & Răzvan 🤍
+</h1>
+
+</section>
+
+</div>
+
+<script>
+
+function openInvitation(){
+  document.getElementById("start").style.display="none";
+  document.getElementById("content").style.display="block";
+}
+
+const targetDate =
+new Date("2027-02-27T13:00:00").getTime();
+
+setInterval(function(){
+
+let now = new Date().getTime();
+let distance = targetDate - now;
+
+document.getElementById("days").innerHTML =
+Math.floor(distance/(1000*60*60*24));
+
+document.getElementById("hours").innerHTML =
+Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+document.getElementById("minutes").innerHTML =
+Math.floor((distance%(1000*60*60))/(1000*60));
+
+document.getElementById("seconds").innerHTML =
+Math.floor((distance%(1000*60))/1000);
+
+},1000);
+
+function sendMail(e){
+
+e.preventDefault();
+
+let body =
+"Nume: " +
+document.getElementById("nume").value +
+"%0D%0A%0D%0AMesaj: " +
+document.getElementById("mesaj").value;
+
+window.location.href =
+"mailto:ralucaionescu183@yahoo.com?subject=Confirmare nunta&body=" + body;
+}
+
+</script>
+
+</body>
+</html>
