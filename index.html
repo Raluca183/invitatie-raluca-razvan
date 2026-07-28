@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Raluca & Răzvan</title>
+
+<link hrefoogleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#f8f4ee;
+font-family:Arial,sans-serif;
+color:#6b6258;
+text-align:center;
+overflow-x:hidden;
+}
+
+h1,h2,h3{
+font-family:'Cormorant Garamond',serif;
+}
+
+h1{
+font-size:60px;
+color:#b89252;
+}
+
+h2{
+font-size:34px;
+}
+
+.section{
+max-width:1000px;
+margin:auto;
+padding:80px 20px;
+}
+
+.button{
+display:inline-block;
+padding:14px 24px;
+background:#d4b483;
+color:white;
+text-decoration:none;
+border-radius:30px;
+margin-top:15px;
+}
+
+.envelope{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.envelope-shape{
+width:340px;
+height:220px;
+background:#efe4d5;
+position:relative;
+border-radius:10px;
+box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+.envelope-shape:before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:0;
+height:0;
+border-left:170px solid transparent;
+border-right:170px solid transparent;
+border-top:110px solid #e4d5c1;
+}
+
+.seal{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:120px;
+height:120px;
+border-radius:50%;
+background:radial-gradient(circle,
+#f4ddb0 0%,
+#d4b483 50%,
+#b89252 100%);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:36px;
+font-weight:bold;
+color:white;
+cursor:pointer;
+box-shadow:0 8px 25px rgba(0,0,0,.25);
+transition:.3s;
+}
+
+.seal:hover{
+transform:translate(-50%,-50%) scale(1.08);
+}
+
+#content{
+display:none;
+}
+
+.hero{
+position:relative;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+}
+
+.hero-bg{
+    position:absolute;
+    inset:0;
+    background:url('raluca-razvan.jpg') center center/cover no-repeat;
+    opacity:.20;
+    filter:blur(2px);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:800px;
+padding:20px;
+}
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.box{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    min-width:100px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+input,
+select,
+textarea{
+width:90%;
+max-width:500px;
+padding:14px;
+border:1px solid #ddd;
+border-radius:12px;
+margin:8px 0;
+}
+
+button{
+background:#d4b483;
+color:white;
+padding:14px 24px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+}
+
+.petal{
+position:fixed;
+top:-50px;
+font-size:26px;
+pointer-events:none;
+animation:fall 10s linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-30px) rotate(0deg);
+}
+
+100%{
+transform:translateY(110vh) rotate(360deg);
+}
+}
+
+</style>
+
+</head>
+
+<body>
+<div class="envelope" id="start">
+
+<div class="envelope-shape">
+
+<div class="seal" onclick="openInvitation()">
+R&amp;R
+</div>
+
+</div>
+
+<p style="margin-top:35px;">
+Există momente care merită trăite împreună...
+</p>
+
+<p style="margin-top:15px;letter-spacing:4px;font-size:13px;">
+APASĂ PENTRU A DESCHIDE
+</p>
+
+</div>
+
+<div id="content">
+<section class="hero">
+
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+
+        <h1>Raluca &amp; Răzvan</h1>
+
+        <h2>Ne căsătorim!</h2>
+
+        <br>
+
+        <p>
+            Împreună cu nașii noștri
+        </p>
+
+        <p>
+            <strong>Diana &amp; Andrei Bob</strong>
+        </p>
+
+        <br>
+
+        <p style="line-height:1.8;font-size:20px;">
+            Cu inimile pline de emoție și recunoștință,
+            vă invităm să ne fiți alături în ziua în care
+            vom spune „Da” pentru totdeauna.
+        </p>
+
+        <br>
+
+        <h2>27 Februarie 2027</h2>
+
+    </div>
+
+</section>
+<section class="section">
+
+<h2>⏳ Countdown</h2>
+
+<br>
+
+<div class="countdown">
+
+    <div class="box">
+        <div id="days">0</div>
+        <small>Zile</small>
+    </div>
+
+    <div class="box">
+        <div id="hours">0</div>
+        <small>Ore</small>
+    </div>
+
+    <div class="box">
+        <div id="minutes">0</div>
+        <small>Minute</small>
+    </div>
+
+    <div class="box">
+        <div id="seconds">0</div>
+        <small>Secunde</small>
+    </div>
+
+</div>
+
+</section>
+<section class="section">
+
+<h2>💒 Program</h2>
+
+<br>
+
+<h3>⛪ Cununia religioasă</h3>
+
+<p>13:00</p>
+
+<p>Biserica Sfinții Împărați Constantin și Elena</p>
+
+<a class="button"
+href="https://maps.app.goo.gl/NJEBskUSeUnqidnQ6?g_st=iw"
+target="_blank">
+Navighează
+</a>
+
+<br><br><br>
+
+<h3>🥂 Recepția</h3>
+
+<p>17:00</p>
+
+<p>Belvedere Events</p>
+
+<a class="button"
+href="https://maps.app.goo.gl/qw9sH2564CuBQjB67?g_st=iw"
+target="_blank">
+Navighează
+</a>
+
+</section>
+
+<section class="section">
+
+<h2>❤️ Povestea noastră</h2>
+
+<br>
+
+<img
+src="inel.jpg"
+alt="Inel"
+style="
+max-width:700px;
+width:90%;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+">
+
+<br><br>
+
+<p style="font-size:22px;">
+Un singur „Da” pentru o viață întreagă.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💌 Confirmare prezență</h2>
+
+<br>
+
+<p style="max-width:600px;margin:auto;line-height:1.8;">
+Vă rugăm să ne confirmați prezența până la
+<b>15 ianuarie 2027</b>.
+</p>
+
+<br><br>
+
+<a class="button"
+href="https://tally.so/r/KYA0oA"
+target="_blank">
+💌 Confirmă prezența
+</a>
+
+</section>
+<section class="section">
+
+<h2>
+Vă așteptăm cu drag să sărbătorim împreună cea mai frumoasă zi din viața noastră!
+</h2>
+
+<br>
+
+<p style="font-style:italic;">
+27 Februarie 2027
+</p>
+
+<br>
+
+<h1>
+Raluca &amp; Răzvan 🤍
+</h1>
+
+</section>
+<script>
+
+function openInvitation(){
+
+    document.getElementById("start").style.display="none";
+    document.getElementById("content").style.display="block";
+
+    for(let i=0;i<25;i++){
+
+        let petal=document.createElement("div");
+
+        petal.className="petal";
+
+        petal.innerHTML="🌸";
+
+        petal.style.left=Math.random()*100+"vw";
+        petal.style.animationDelay=Math.random()*5+"s";
+
+        document.body.appendChild(petal);
+    }
+}
+
+const targetDate =
+new Date("2027-02-27T13:00:00").getTime();
+
+setInterval(function(){
+
+    let now = new Date().getTime();
+    let distance = targetDate - now;
+
+    document.getElementById("days").innerHTML =
+    Math.floor(distance/(1000*60*60*24));
+
+    document.getElementById("hours").innerHTML =
+    Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+    document.getElementById("minutes").innerHTML =
+    Math.floor((distance%(1000*60*60))/(1000*60));
+
+    document.getElementById("seconds").innerHTML =
+    Math.floor((distance%(1000*60))/1000);
+
+},1000);
+
+</script>
+
+</body>
+</html>
