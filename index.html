@@ -1,229 +1,285 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Raluca & Răzvan</title>
 
-<link href="https://fonts.googleapis.com
+<link hrefoogleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-.divider{
-    width:120px;
-    height:2px;
-    background:#d4b483;
-    margin:50px auto;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    margin:0;
-    padding:0;
-    background:#f8f4ee;
-    color:#6b6258;
-    font-family:Arial,sans-serif;
-    text-align:center;
+background:#f8f4ee;
+font-family:Arial,sans-serif;
+color:#6b6258;
+text-align:center;
+overflow-x:hidden;
 }
 
 h1,h2,h3{
-    font-family:'Cormorant Garamond',serif;
-}
-
-.section{
-    padding:80px 20px;
+font-family:'Cormorant Garamond',serif;
 }
 
 h1{
-    font-size:48px;
-    margin-top:30px;
-    color:#b89252;
+font-size:60px;
+color:#b89252;
 }
 
 h2{
-    font-size:30px;
+font-size:34px;
 }
 
-img{
-    max-width:90%;
-    border-radius:20px;
+.section{
+max-width:1000px;
+margin:auto;
+padding:80px 20px;
 }
 
 .button{
-    display:inline-block;
-    padding:14px 24px;
-    background:#d4b483;
-    color:white;
-    text-decoration:none;
-    border-radius:30px;
-    margin-top:15px;
+display:inline-block;
+padding:14px 24px;
+background:#d4b483;
+color:white;
+text-decoration:none;
+border-radius:30px;
+margin-top:15px;
 }
 
 .envelope{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.envelope-shape{
+width:340px;
+height:220px;
+background:#efe4d5;
+position:relative;
+border-radius:10px;
+box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+.envelope-shape:before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:0;
+height:0;
+border-left:170px solid transparent;
+border-right:170px solid transparent;
+border-top:110px solid #e4d5c1;
 }
 
 .seal{
-    width:130px;
-    height:130px;
-    border-radius:50%;
-    background:radial-gradient(circle,
-    #e8c88d 0%,
-    #d4b483 45%,
-    #b89252 100%);
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    cursor:pointer;
-    font-size:34px;
-    font-family:'Cormorant Garamond',serif;
-    box-shadow:0 8px 25px rgba(0,0,0,0.25);
-    letter-spacing:2px;
-}
-
-.seal{
-    transition:all .3s ease;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:120px;
+height:120px;
+border-radius:50%;
+background:radial-gradient(circle,
+#f4ddb0 0%,
+#d4b483 50%,
+#b89252 100%);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:36px;
+font-weight:bold;
+color:white;
+cursor:pointer;
+box-shadow:0 8px 25px rgba(0,0,0,.25);
+transition:.3s;
 }
 
 .seal:hover{
-    transform:scale(1.08);
+transform:translate(-50%,-50%) scale(1.08);
 }
 
 #content{
-    display:none;
+display:none;
+}
+
+.hero{
+position:relative;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+}
+
+.hero-bg{
+    position:absolute;
+    inset:0;
+    background:url('raluca-razvan.jpg') center center/cover no-repeat;
+    opacity:.20;
+    filter:blur(2px);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:800px;
+padding:20px;
 }
 
 .countdown{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
 }
 
 .box{
     background:white;
-    padding:15px;
-    border-radius:15px;
-    min-width:80px;
+    padding:25px;
+    border-radius:20px;
+    min-width:100px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
-.hero-photo{
-    width:100%;
-    max-width:1000px;
-    height:auto;
-    object-fit:cover;
-    border-radius:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-}
 input,
 select,
 textarea{
-    width:90%;
-    max-width:500px;
-    padding:14px;
-    border:1px solid #ddd;
-    border-radius:12px;
-    font-size:16px;
-    font-family:Arial,sans-serif;
-    background:white;
+width:90%;
+max-width:500px;
+padding:14px;
+border:1px solid #ddd;
+border-radius:12px;
+margin:8px 0;
 }
 
 button{
-    background:#d4b483;
-    color:white;
-    border:none;
-    padding:14px 24px;
-    border-radius:30px;
-    cursor:pointer;
-    font-size:16px;
+background:#d4b483;
+color:white;
+padding:14px 24px;
+border:none;
+border-radius:30px;
+cursor:pointer;
 }
 
-button:hover{
-    background:#c6a36d;
+.petal{
+position:fixed;
+top:-50px;
+font-size:26px;
+pointer-events:none;
+animation:fall 10s linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-30px) rotate(0deg);
+}
+
+100%{
+transform:translateY(110vh) rotate(360deg);
+}
 }
 
 </style>
+
 </head>
+
 <body>
 <div class="envelope" id="start">
+
+<div class="envelope-shape">
 
 <div class="seal" onclick="openInvitation()">
 R&amp;R
 </div>
 
+</div>
 
-<p>
+<p style="margin-top:35px;">
 Există momente care merită trăite împreună...
 </p>
 
-<p style="margin-top:25px;font-size:14px;letter-spacing:4px;">
+<p style="margin-top:15px;letter-spacing:4px;font-size:13px;">
 APASĂ PENTRU A DESCHIDE
 </p>
 
 </div>
 
-
 <div id="content">
-<section class="section">
+<section class="hero">
 
-<img
-src="raluca-razvan.jpg"
-class="hero-photo"
-alt="Raluca si Razvan">
+    <div class="hero-bg"></div>
 
-<h1>Raluca & Răzvan</h1>
+    <div class="hero-content">
 
-<h2>Ne căsătorim!</h2>
+        <h1>Raluca &amp; Răzvan</h1>
 
-<p>
-Împreună cu nașii noștri
-</p>
+        <h2>Ne căsătorim!</h2>
 
-<p>
-<b>Diana & Andrei Bob</b>
-</p>
+        <br>
 
-<p style="max-width:700px;margin:auto;line-height:1.8;">
-Cu inimile pline de emoție și recunoștință,
-vă invităm să ne fiți alături în ziua în care
-vom spune „Da” pentru totdeauna.
-</p>
+        <p>
+            Împreună cu nașii noștri
+        </p>
 
-<h2>
-27 Februarie 2027
-</h2>
+        <p>
+            <strong>Diana &amp; Andrei Bob</strong>
+        </p>
+
+        <br>
+
+        <p style="line-height:1.8;font-size:20px;">
+            Cu inimile pline de emoție și recunoștință,
+            vă invităm să ne fiți alături în ziua în care
+            vom spune „Da” pentru totdeauna.
+        </p>
+
+        <br>
+
+        <h2>27 Februarie 2027</h2>
+
+    </div>
 
 </section>
 <section class="section">
 
 <h2>⏳ Countdown</h2>
 
+<br>
+
 <div class="countdown">
 
-<div class="box">
-<div id="days">0</div>
-Zile
-</div>
+    <div class="box">
+        <div id="days">0</div>
+        <small>Zile</small>
+    </div>
 
-<div class="box">
-<div id="hours">0</div>
-Ore
-</div>
+    <div class="box">
+        <div id="hours">0</div>
+        <small>Ore</small>
+    </div>
 
-<div class="box">
-<div id="minutes">0</div>
-Minute
-</div>
+    <div class="box">
+        <div id="minutes">0</div>
+        <small>Minute</small>
+    </div>
 
-<div class="box">
-<div id="seconds">0</div>
-Secunde
-</div>
+    <div class="box">
+        <div id="seconds">0</div>
+        <small>Secunde</small>
+    </div>
 
 </div>
 
@@ -232,19 +288,20 @@ Secunde
 
 <h2>💒 Program</h2>
 
+<br>
+
 <h3>⛪ Cununia religioasă</h3>
 
 <p>13:00</p>
 
 <p>Biserica Sfinții Împărați Constantin și Elena</p>
 
-<a class="button"
-href="https://maps.app.goo.gl/NJEBskUSeUnqidnQ6?g_st=iw"
+<a class=goo.gl/NJEBskUSeUnqidnQ6?g_st=iw"
 target="_blank">
 Navighează
 </a>
 
-<br><br>
+<br><br><br>
 
 <h3>🥂 Recepția</h3>
 
@@ -261,113 +318,62 @@ Navighează
 </section>
 <section class="section">
 
-<h2>❤️ Povestea noastră</h2>
-
-<img
-src="inel.jpg"
-alt="Inel"
-style="max-width:90%;border-radius:20px;">
-
-<p>
-Un singur „Da” pentru o viață întreagă.
-</p>
-
-</section>
-<section class="section">
-
 <h2>💌 Confirmare prezență</h2>
+
+<br>
 
 <p style="max-width:600px;margin:auto;line-height:1.8;">
 Vă rugăm să ne confirmați prezența până la
 <b>15 ianuarie 2027</b>.
 </p>
 
-<br>
-
-
-<form onsubmit="sendMail(event)">
-
-<input id="nume"
-placeholder="Nume și prenume"
-required>
-
 <br><br>
 
-<select id="participare">
-
-<option>Veți participa?</option>
-
-<option>Da, vom participa cu drag 🤍</option>
-
-<option>Din păcate nu vom putea participa</option>
-
-</select>
-
-<br><br>
-
-<input
-id="adulti"
-placeholder="Număr adulți">
-
-<br><br>
-
-<input
-id="copii"
-placeholder="Număr copii">
-
-<br><br>
-
-<select id="cazare">
-
-<option>Aveți nevoie de cazare?</option>
-
-<option>Da</option>
-
-<option>Nu</option>
-
-</select>
-
-<br><br>
-
-<textarea
-id="mesaj"
-placeholder="Mesaj pentru miri">
-</textarea>
-
-<br><br>
-
-<button type="submit">
-Trimite confirmarea
-</button>
-
-<div style="margin-top:20px;font-size:14px;">
-Mulțumim pentru confirmare! 🤍
-<br>
-Vă așteptăm cu drag să sărbătorim împreună!
-
-<p style="font-style:italic;">
-27 Februarie 2027
-</p>
-</div>
-
-</form>
+.so/r/KYA0oA"
+target="_blank">
+💌 Confirmă prezența
+</a>
 
 </section>
 <section class="section">
 
+<h2>
+Vă așteptăm cu drag să sărbătorim împreună cea mai frumoasă zi din viața noastră!
+</h2>
+
+<br>
+
+<p style="font-style:italic;">
+27 Februarie 2027
+</p>
+
+<br>
+
 <h1>
-Raluca & Răzvan 🤍
+Raluca &amp; Răzvan 🤍
 </h1>
 
 </section>
-
-</div>
-
 <script>
 
 function openInvitation(){
-  document.getElementById("start").style.display="none";
-  document.getElementById("content").style.display="block";
+
+    document.getElementById("start").style.display="none";
+    document.getElementById("content").style.display="block";
+
+    for(let i=0;i<25;i++){
+
+        let petal=document.createElement("div");
+
+        petal.className="petal";
+
+        petal.innerHTML="🌸";
+
+        petal.style.left=Math.random()*100+"vw";
+        petal.style.animationDelay=Math.random()*5+"s";
+
+        document.body.appendChild(petal);
+    }
 }
 
 const targetDate =
@@ -375,36 +381,27 @@ new Date("2027-02-27T13:00:00").getTime();
 
 setInterval(function(){
 
-let now = new Date().getTime();
-let distance = targetDate - now;
+    let now = new Date().getTime();
+    let distance = targetDate - now;
 
-document.getElementById("days").innerHTML =
-Math.floor(distance/(1000*60*60*24));
+    document.getElementById("days").innerHTML =
+    Math.floor(distance/(1000*60*60*24));
 
-document.getElementById("hours").innerHTML =
-Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+    document.getElementById("hours").innerHTML =
+    Math.floor((distance%(1000*60*60*24))/(1000*60*60));
 
-document.getElementById("minutes").innerHTML =
-Math.floor((distance%(1000*60*60))/(1000*60));
+    document.getElementById("minutes").innerHTML =
+    Math.floor((distance%(1000*60*60))/(1000*60));
 
-document.getElementById("seconds").innerHTML =
-Math.floor((distance%(1000*60))/1000);
+    document.getElementById("seconds").innerHTML =
+    Math.floor((distance%(1000*60))/1000);
 
 },1000);
 
-function sendMail(e){
+</script>
 
-e.preventDefault();
-
-let body =
-"Nume: " +
-document.getElementById("nume").value +
-"%0D%0A%0D%0AMesaj: " +
-document.getElementById("mesaj").value;
-
-window.location.href =
-"mailto:ralucaionescu183@yahoo.com?subject=Confirmare nunta&body=" + body;
-}
+</body>
+</html>
 
 </script>
 
